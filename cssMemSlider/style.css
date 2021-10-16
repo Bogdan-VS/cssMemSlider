@@ -68,7 +68,7 @@ input {
 
 .slider-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .conrtols {
@@ -156,4 +156,86 @@ input {
 }
 #pag4:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-items .pag1 {
     margin-left: -75%;
+}
+
+
+@media (max-width: 900px) {
+
+    .slider-wrapper {
+        width:  calc(100% - 50px);
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    .item p {
+        margin-top: 70px;
+    }
+
+    .conrtols {
+        width: 200px;
+        margin: -105px 0 0 0;
+    }
+
+    .slider-container {
+        justify-content: center;
+    }
+
+    .item p {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .item-container img {
+        max-width: 460px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .item p {
+        font-size: 18px;
+    }
+
+    .conrtols {
+        margin: -98px 0 0 0;
+    }
+
+    .item-container img {
+        max-width: 330px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .item p {
+        font-size: 12px;
+        padding: 0 0 15px 15px;
+        margin-top: 45px;
+    }
+
+    .item-container img {
+        max-width: 200px;
+    }
+
+    .conrtols {
+        width: 140px;
+        margin: -65px 0 0 0;
+    }
+
+    .conrtols label {
+        width: 30px;
+        height: 30px;
+        border: rgb(49, 49, 49) solid 7px;
+    }
+
+    .control-item {
+        width: 16px;
+        height: 16px;
+        border: 3px solid gold;
+        border-radius: 50%;
+    }
 }
