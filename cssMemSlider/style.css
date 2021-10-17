@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: darkgray;
+}
+
+.wrapper-container {
+    max-width: 100vw;
+    height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+}
+
+.slider-wrapper {
+    width:  calc(100% - 200px);
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.slider-items {
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+
+input {
+    display: none;
+}
+
+.item {
+    width: 25%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    transition: 0.7s;
+    background-color: rgb(49, 49, 49);
+    border-radius: 20px;
+}
+
+.item-container {
+    display: flex;
+    justify-content: center;
+    background-color: gold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.item-container img {
+    max-width: 460px;
+    height: auto;
+}
+
+.item p {
+    font-size: 26px;
+    margin-top: 50px;
+    color: coral;
+    padding: 0 0 25px 15px;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.conrtols {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    margin: -59px 0 0 0;
+    background-color: rgb(49, 49, 49);
+    border-bottom-right-radius: 20px;
+}
+
+.text-container {
+    max-width: 300px;
+    overflow-x: hidden;
+}
+
+.text-slider {
+    width: 400%;
+    height: auto;
+    display: flex;
+}
+
+.text-item {
+    height: auto;
+    transition: 0.7s;
+}
+
+.conrtols label {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: rgb(49, 49, 49) solid 10px;
+    border-radius: 50%;
+    background: rgb(206, 209, 206);
+    cursor: pointer;
+}
+
+.conrtols label:hover {
+    background-color: gold;
+}
+
+.conrtols label:active {
+    background-color: rgb(255, 128, 23);
+}
+
+.control-item {
+    width: 20px;
+    height: 20px;
+    border: 3px solid gold;
+    border-radius: 50%;
+}
+
+.control-item:hover {
+    background-color: gold;
+    cursor: pointer;
+}
+
+.control-item:active {
+    background-color: rgb(255, 128, 23);
+}
+
+#pag1:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-container .conrtols label:nth-child(1) {
+    background-color: black;
+}
+#pag2:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-container .conrtols label:nth-child(2) {
+    background-color: black;
+}
+#pag3:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-container .conrtols label:nth-child(3) {
+    background-color: black;
+}
+#pag4:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-container .conrtols label:nth-child(4) {
+    background-color: black;
+}
+
+#pag1:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-items .pag1 {
+    margin-left: 0;
+}
+#pag2:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-items .pag1 {
+    margin-left: -25%;
+}
+#pag3:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-items .pag1 {
+    margin-left: -50%;
+}
+#pag4:checked ~ .wrapper .wrapper-container .slider-wrapper .slider-items .pag1 {
+    margin-left: -75%;
+}
+
+
+@media (max-width: 900px) {
+
+    .slider-wrapper {
+        width:  calc(100% - 50px);
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    .item p {
+        margin-top: 70px;
+    }
+
+    .conrtols {
+        width: 200px;
+        margin: -105px 0 0 0;
+    }
+
+    .slider-container {
+        justify-content: center;
+    }
+
+    .item p {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .item-container img {
+        max-width: 460px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .item p {
+        font-size: 18px;
+    }
+
+    .conrtols {
+        margin: -98px 0 0 0;
+    }
+
+    .item-container img {
+        max-width: 330px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .item p {
+        font-size: 12px;
+        padding: 0 0 15px 15px;
+        margin-top: 45px;
+    }
+
+    .item-container img {
+        max-width: 200px;
+    }
+
+    .conrtols {
+        width: 140px;
+        margin: -65px 0 0 0;
+    }
+
+    .conrtols label {
+        width: 30px;
+        height: 30px;
+        border: rgb(49, 49, 49) solid 7px;
+    }
+
+    .control-item {
+        width: 16px;
+        height: 16px;
+        border: 3px solid gold;
+        border-radius: 50%;
+    }
+}
